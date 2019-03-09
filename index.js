@@ -4,7 +4,11 @@ var socketio = require('socket.io');
 var mongojs = require('mongojs');
 
 var ObjectID = mongojs.ObjectID;
-var db = mongojs(process.env.MONGO_URL || 'mongodb://localhost:27017/local');
+
+//var db = mongojs(process.env.MONGO_URL || 'mongodb://localhost:27017/local');
+
+var db = mongojs('mongodb://socketiouser:socketiouser04@ds163835.mlab.com:63835/socketio');
+
 var app = express();
 var server = http.Server(app);
 var websocket = socketio(server);
